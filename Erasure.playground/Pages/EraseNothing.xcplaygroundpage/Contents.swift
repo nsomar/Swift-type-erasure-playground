@@ -1,4 +1,4 @@
-//: Type Erasure playground
+//: #  Type Erasure playground
 
 import UIKit
 
@@ -55,6 +55,6 @@ class AnyBox<B: Box>: Box {
 let boxes = [
   AnyBox(box: IntBox()),
   AnyBox(box: IntBox())
-]
+] 
 
-//: [Next](@next)
+//: [Erasing the Box but keeping the internal type](@next)

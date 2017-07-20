@@ -35,13 +35,15 @@ struct IntStringBox: Box {
 }
 
 
-//: ## An array of Boxes that Contain `Any` for both types
+//: ## An array of Boxes that Contain `Type1` and `Type2` for both types
 
-//: How can I have an array that contains boxes with any
+//: How can I have an array that contains boxes with two specific types
 //: ```
-//: var boxesWithAny: [Box] = []
+//: var boxesWithIntInt: [Box] = []
 //: ```
 //: i.e A wrapper that erases the container only
+//: The above is not possible as `Box` has an associated type and can only be used as a generic constraint
+//: We need to create a wrapper that can hold a `Box` with `Int` and `Int`
 //:
 //: Steps
 //: - Create a class that is a `Box` and has two generics
@@ -70,9 +72,11 @@ class AnyBoxErasingBoth<Type1, Type2>: Box {
 //: ## An array of Boxes that Contain `Any` for both types
 //: How can I have an array that contains boxes with any
 //: ```
-//: var boxesWithAny: [Box] = []
+//: var boxesWithAnyAny: [Box] = []
 //: ```
 //: i.e A wrapper that erases the container and the inside type
+//: The above is not possible as `Box` has an associated type and can only be used as a generic constraint
+//: We need to create a wrapper that can hold a `Box` with `Any` and `Any`
 //:
 //: Steps
 //: - Create a class that is a `Box` and has two generics

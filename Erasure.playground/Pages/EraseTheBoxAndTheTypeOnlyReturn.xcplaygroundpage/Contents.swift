@@ -36,6 +36,8 @@ struct StringBox: Box {
 //: var boxesWithAny: [Box] = []
 //: ```
 //: i.e A wrapper that erases the container and the inside type
+//: The above is not possible as `Box` has an associated type and can only be used as a generic constraint
+//: We need to create a wrapper that can hold a `Box` with `Any`
 //:
 //: Steps
 //: - Create a class that is a `Box`
@@ -67,4 +69,4 @@ boxesWithAnything[0].unpack()
 boxesWithAnything[1].unpack()
 boxesWithAnything[2].unpack()
 
-//: [Next](@next)
+//: [Erasing the Box and also the `InsideType` with dynamic cast of parameters](@next)

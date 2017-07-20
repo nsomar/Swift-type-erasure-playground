@@ -38,6 +38,8 @@ struct StringBox: Box {
 //: var boxesWithAny: [Box] = []
 //: ```
 //: i.e A wrapper that erases the container and the inside type
+//: The above is not possible as `Box` has an associated type and can only be used as a generic constraint
+//: We need to create a wrapper that can hold a `Box` with `Any`
 //:
 //: This is the most invloved erasure as it will fail if the type passed is not type
 //:
@@ -82,4 +84,4 @@ boxesWithAnything[0].pack(val: 1)
 boxesWithAnything[1].pack(val: 2)
 boxesWithAnything[2].pack(val: "Hello")
 
-//: [Next](@next)
+//: [Erasing the Box with multiple types](@next)
